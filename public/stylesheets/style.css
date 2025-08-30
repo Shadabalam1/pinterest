@@ -1,0 +1,174 @@
+*{
+   margin: 0;
+   padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Container */
+.container {
+background-color: #fff;
+width: 480px;
+position: absolute;
+margin: auto;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border-radius: 10px;
+box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.5);
+ 
+}
+
+/* Content */
+.content {
+padding: 0px 0px 20px 0px;
+  text-align: center;
+  width: 56%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Logo */
+.img1 {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+/* Heading */
+.header {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 0.5;
+}
+
+/* Input fields */
+.detail {
+  width: 100%;
+  height: 48px;
+  margin: 5px 0;
+  padding: 12px 15px;
+  font-size: 15px;
+  color: gray;
+  border: 2px solid rgb(218, 214, 214);
+  border-radius: 15px;
+}
+
+.detail:focus {
+  border-color: rgb(15, 91, 231);
+  box-shadow: 0 0 8px rgba(15, 91, 231, 0.5);
+  outline: none;
+}
+
+/* Forgot password */
+h4 {
+  text-align: right;
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.int {
+  background: #e60023;
+  color: #fff;
+}
+.btn.int:hover {
+  background: #c0001d;
+}
+
+.btn.fbk {
+  background: #1877f2;
+  color: #fff;
+}
+
+.btn.ggl {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #444;
+}
+
+/* Links inside button */
+.btn a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* OR text */
+.or {
+  margin: 12px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #666;
+}
+footer b {
+  color: #000;
+  cursor: pointer;
+}
+footer hr {
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* Sign up button (outside container) */
+.upbtn {
+
+  text-decoration: none;
+  padding: 12px 20px;
+  color: black;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.error {
+  color: red;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 14px;
+  margin: 7px 0px;
+
+}
+

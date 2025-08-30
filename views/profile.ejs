@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= user.fullname %>'s Profile</title>
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+<body>
+
+
+    <nav>
+      <div class="logo">
+        <h5>Pinterest</h5>
+		  
+      </div>
+      <ul class="navLink">
+        <li><a href="/feed">Feed</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+
+      <div class="lines">
+		  <div class="l1"></div>
+		  <div class="l2"></div>
+		  <div class="l3"></div>
+	  </div>
+    </nav>
+	  
+    </nav>
+
+
+
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <img src="<%= user.dp || 'https://cdn-icons-png.flaticon.com/512/149/149071.png' %>" 
+         alt="Profile Picture" class="profile-pic">
+    <h1 class="profile-name"><%= user.fullname %></h1>
+    <p class="profile-username">@<%= user.username %></p>
+
+    <div class="profile-stats">
+      <div class="stat">
+        <div class="stat-number"><%= user.posts?.length || 0 %></div>
+        <div class="stat-label">Posts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Followers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Following</div>
+      </div>
+    </div>
+
+    <a href="/logout">
+      <button class="logout-btn">Logout</button>
+    </a>
+
+
+<!-- Create Post Button -->
+<button id="create-post-btn" class="create-post-btn">Create Post</button>
+
+<!-- Hidden Form -->
+<div id="post-form-container" class="hidden-form">
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    
+    <!-- File Input -->
+    <input type="file" name="image" accept="image/*" id="upload-input" hidden required>
+    
+    <!-- Image Preview -->
+    <div id="preview-container" class="preview-box"></div>
+
+    <!-- Title Input -->
+    <input
+      type="text"
+      name="postText"
+      placeholder="Add a title for your pin..."
+      class="pinterest-title-input"
+      required
+    >
+
+    <!-- Upload Button (label trigger for file input) -->
+    <label for="upload-input" class="pinterest-upload-btn">
+      <i class="fas fa-upload"></i> Choose Image
+    </label>
+
+    <!-- Submit Button -->
+    <button type="submit" class="pinterest-submit-btn">
+      Post Pin
+    </button>
+  </form>
+</div>
+
+<!-- Posts Grid -->
+<div class="container">
+  <h2 class="section-title">Your Pins</h2>
+  <div class="posts-grid">
+    <% if (user.posts && user.posts.length > 0) { %>
+      <% user.posts.forEach(function(post){ %>
+        <div class="post-card">
+          <!-- ✅ Fixed: Full path added -->
+          <img src="/images/uploads/<%= post.image %>" alt="Pin">
+          <div class="post-footer">
+            <%= post.postText %>
+          </div>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p class="no-posts">You haven't uploaded any pins yet.</p>
+    <% } %>
+  </div>
+</div>
+
+  <footer class="app-footer">
+    &copy; 2025 Pinterest Clone | Made with ❤️ by riyan kainat
+  </footer>
+<script src="/javascripts/post.js"></script>
+</body>
+</html>
