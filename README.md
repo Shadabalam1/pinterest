@@ -31,7 +31,7 @@ A backend web application inspired by Pinterest, built using Node.js, Express, a
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/pinterest.git
+git clone https://github.com/Shadabalam1/pinterest.git
 ```
 
 ### 2. Navigate to project folder
